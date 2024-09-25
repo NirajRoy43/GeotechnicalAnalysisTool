@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geotechnical Analysis Tool</title>
+</head>
+<body>
+    <h1>Geotechnical Analysis Tool</h1>
+    <form action="/result" method="POST">
+        <label for="calculation_type">Select Calculation Type:</label><br>
+        <select id="calculation_type" name="calculation_type">
+            <option value="bearing_capacity">Bearing Capacity</option>
+            <option value="slope_stability">Slope Stability</option>
+        </select><br><br>
+
+        <!-- Inputs for Bearing Capacity -->
+        <div id="bearing_capacity_inputs">
+            <h2>Bearing Capacity Calculation</h2>
+            <label for="cohesion">Cohesion (kPa):</label><br>
+            <input type="number" step="any" name="cohesion" required><br>
+            <label for="unit_weight">Unit Weight (kN/m³):</label><br>
+            <input type="number" step="any" name="unit_weight" required><br>
+            <label for="depth">Depth (m):</label><br>
+            <input type="number" step="any" name="depth" required><br>
+            <label for="width">Width (m):</label><br>
+            <input type="number" step="any" name="width" required><br>
+            <label for="surcharge">Surcharge (kPa):</label><br>
+            <input type="number" step="any" name="surcharge" required><br>
+            <label for="phi">Angle of Friction (°):</label><br>
+            <input type="number" step="any" name="phi" required><br><br>
+        </div>
+
+        <!-- Inputs for Slope Stability -->
+        <div id="slope_stability_inputs">
+            <h2>Slope Stability Calculation</h2>
+            <label for="slope_angle">Slope Angle (°):</label><br>
+            <input type="number" step="any" name="slope_angle" required><br>
+            <label for="cohesion">Cohesion (kPa):</label><br>
+            <input type="number" step="any" name="cohesion" required><br>
+            <label for="unit_weight">Unit Weight (kN/m³):</label><br>
+            <input type="number" step="any" name="unit_weight" required><br>
+            <label for="height">Slope Height (m):</label><br>
+            <input type="number" step="any" name="height" required><br>
+            <label for="phi">Angle of Friction (°):</label><br>
+            <input type="number" step="any" name="phi" required><br>
+            <label for="water_table_depth">Water Table Depth (m):</label><br>
+            <input type="number" step="any" name="water_table_depth" required><br><br>
+        </div>
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>
